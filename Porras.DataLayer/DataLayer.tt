@@ -1,0 +1,25 @@
+﻿<#@ include file ="EntityLite.ttinclude\EntityLite.ttinclude" #>
+<#
+	var generation = new DataLayerGeneration
+	{
+		ProviderName = "System.Data.SqlClient",
+		ConnectionString = @"Data Source=(localdb)\V11.0;Integrated Security=SSPI;Initial Catalog=Porras",
+		DefaultSchema = "dbo",
+		RootNamespace = "Porras.Entities",
+		DataServiceName = "PorrasDataService",
+        ConnectionStringName= "Porras",
+		EntitySettings = new List<EntitySetting>
+		{
+			new EntitySetting 
+			{
+                EntityName = "AppUser", 
+				BaseTableName = "AppUsers"
+			}
+		},
+		ProcedureSettings = new List<ProcedureSetting>
+		{
+		
+		}
+	};
+	Render(generation);
+#>
